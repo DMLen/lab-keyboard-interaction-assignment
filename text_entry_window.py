@@ -3,6 +3,7 @@ import tkinter as tk
 import keyboard_design as kd
 import recognizer
 from template import Point, WordTemplates
+from tkinter import messagebox
 
 
 class Application(tk.Frame):
@@ -68,11 +69,15 @@ class Application(tk.Frame):
         btn = event.widget  # event.widget is the widget that called the event
         #self.label_show_text.config(text=btn.cget('text'))
 
+        #if there is a command key in the predictor candidate, find out which command
+        #and then execute a corresponding function
+
         if '⌘' in btn.cget('text'):
             print("Hit! Command key detected!")
             if 'copy' in btn.cget('text') or 'COPY' in btn.cget('text'):
                 print("Hit! Copy command detected!")
                 #copy function here
+                messagebox.showinfo("Message","Text copied!")
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
@@ -80,6 +85,7 @@ class Application(tk.Frame):
             elif 'redo' in btn.cget('text') or 'REDO' in btn.cget('text'):
                 print("Hit! Redo command detected!")
                 #redo function here
+                messagebox.showinfo("Message","Command redone!")
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
@@ -87,6 +93,7 @@ class Application(tk.Frame):
             elif 'undo' in btn.cget('text') or 'UNDO' in btn.cget('text'):
                 print("Hit! Undo command detected!")
                 #undo function here
+                messagebox.showinfo("Message","Command undone!")
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
@@ -94,16 +101,20 @@ class Application(tk.Frame):
             elif 'save' in btn.cget('text') or 'SAVE' in btn.cget('text'):
                 print("Hit! Save command detected!")
                 #save function here
+                messagebox.showinfo("Message","Text saved!")
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
             
             else:
-                #just in case
+                #just in case an invalid entry with command key is entered
                 print("Invalid command! Doing nothing!")
+                messagebox.showinfo("Message","Invalid command!")
+
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
 
+        #otherwise proceed as normal
         else:
             self.text.insert(tk.END, btn.cget('text')) # show it to the text widget
             for i in range(len(self.label_word_candidates)): # clear the content of all word labels
