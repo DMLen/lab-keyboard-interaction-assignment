@@ -67,9 +67,47 @@ class Application(tk.Frame):
     def select_word_candidate(self, event):
         btn = event.widget  # event.widget is the widget that called the event
         #self.label_show_text.config(text=btn.cget('text'))
-        self.text.insert(tk.END, btn.cget('text')) # show it to the text widget
-        for i in range(len(self.label_word_candidates)): # clear the content of all word labels
-            self.label_word_candidates[i].config(text='')
+
+        if '⌘' in btn.cget('text'):
+            print("Hit! Command key detected!")
+            if 'copy' in btn.cget('text'):
+                print("Hit! Copy command detected!")
+                #copy function here
+
+                for i in range(len(self.label_word_candidates)): # clear the content of all word labels
+                    self.label_word_candidates[i].config(text='')
+
+            elif 'redo' in btn.cget('text'):
+                print("Hit! Redo command detected!")
+                #redo function here
+
+                for i in range(len(self.label_word_candidates)): # clear the content of all word labels
+                    self.label_word_candidates[i].config(text='')
+
+            elif 'undo' in btn.cget('text'):
+                print("Hit! Undo command detected!")
+                #undo function here
+
+                for i in range(len(self.label_word_candidates)): # clear the content of all word labels
+                    self.label_word_candidates[i].config(text='')
+
+            elif 'save' in btn.cget('text'):
+                print("Hit! Save command detected!")
+                #save function here
+
+                for i in range(len(self.label_word_candidates)): # clear the content of all word labels
+                    self.label_word_candidates[i].config(text='')
+            
+            else:
+                #just in case
+                print("Invalid command!")
+                for i in range(len(self.label_word_candidates)): # clear the content of all word labels
+                    self.label_word_candidates[i].config(text='')
+
+        else:
+            self.text.insert(tk.END, btn.cget('text')) # show it to the text widget
+            for i in range(len(self.label_word_candidates)): # clear the content of all word labels
+                self.label_word_candidates[i].config(text='')
 
     # press mouse left button
     def mouse_left_button_press(self, event):

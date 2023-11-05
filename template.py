@@ -20,12 +20,13 @@ class WordTemplates:
 
         self.word_list = ['it', 'we', 'he', 'on',
                           'the', 'but', 'his', 'are',
-                          'copy', 'redo', 'undo', 'save',  # text editing commands
+                          '⌘copy', '⌘redo', '⌘undo', '⌘save',
+                          'copy⌘', 'redo⌘', 'undo⌘', 'save⌘',  # text editing commands
                           'people', 'before', 'during', 'number',
                           'problem', 'example', 'company', 'country',
                           'absolutely', 'dealership', 'noteworthy', 'surprising',
                           'information', 'development', 'outstanding', 'personality',
-                          'hello', 'apple', 'square', 'amazing', 'papal', 'wow']
+                          'hello', 'apple', 'square', 'amazing', 'papal', 'wow', 'what', 'hello', 'hi']
                           
         self.templates = []
 
