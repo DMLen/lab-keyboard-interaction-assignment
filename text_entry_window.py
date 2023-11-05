@@ -70,28 +70,28 @@ class Application(tk.Frame):
 
         if '⌘' in btn.cget('text'):
             print("Hit! Command key detected!")
-            if 'copy' in btn.cget('text'):
+            if 'copy' in btn.cget('text') or 'COPY' in btn.cget('text'):
                 print("Hit! Copy command detected!")
                 #copy function here
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
 
-            elif 'redo' in btn.cget('text'):
+            elif 'redo' in btn.cget('text') or 'REDO' in btn.cget('text'):
                 print("Hit! Redo command detected!")
                 #redo function here
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
 
-            elif 'undo' in btn.cget('text'):
+            elif 'undo' in btn.cget('text') or 'UNDO' in btn.cget('text'):
                 print("Hit! Undo command detected!")
                 #undo function here
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
 
-            elif 'save' in btn.cget('text'):
+            elif 'save' in btn.cget('text') or 'SAVE' in btn.cget('text'):
                 print("Hit! Save command detected!")
                 #save function here
 
@@ -100,7 +100,7 @@ class Application(tk.Frame):
             
             else:
                 #just in case
-                print("Invalid command!")
+                print("Invalid command! Doing nothing!")
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
 
