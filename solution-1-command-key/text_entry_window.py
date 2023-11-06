@@ -109,7 +109,7 @@ class Application(tk.Frame):
             else:
                 #just in case an invalid entry with command key is entered
                 print("Invalid command! Doing nothing!")
-                messagebox.showinfo("Message","Invalid command!")
+                messagebox.showinfo("Error","Invalid command!")
 
                 for i in range(len(self.label_word_candidates)): # clear the content of all word labels
                     self.label_word_candidates[i].config(text='')
