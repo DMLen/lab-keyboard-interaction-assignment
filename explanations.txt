@@ -1,0 +1,5 @@
+in solution 1, a command key is added to the keyboard. the words "save", "undo", "copy and "redo" in addition with a command key will be recognized as commands.
+
+in solution 2, triple-clicking on C, U, S or R will respectively input the commands copy, undo, save and redo.
+
+in solution 3, writing "save" and selecting it from the candidate list will ask if you wish to run save as a command. same works for other commands. technically similar to solution 1 as we are hijacking the candidate selection function with a string comparison.
